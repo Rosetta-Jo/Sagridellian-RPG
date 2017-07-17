@@ -1,0 +1,6 @@
+C:\Users\CRCUser\Desktop\TutoringGame\TutoringGame\bin\Release\TutoringGame.exe.config
+C:\Users\CRCUser\Desktop\TutoringGame\TutoringGame\bin\Release\TutoringGame.exe
+C:\Users\CRCUser\Desktop\TutoringGame\TutoringGame\bin\Release\TutoringGame.pdb
+C:\Users\CRCUser\Desktop\TutoringGame\TutoringGame\obj\Release\TutoringGame.csprojResolveAssemblyReference.cache
+C:\Users\CRCUser\Desktop\TutoringGame\TutoringGame\obj\Release\TutoringGame.exe
+C:\Users\CRCUser\Desktop\TutoringGame\TutoringGame\obj\Release\TutoringGame.pdb
