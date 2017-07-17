@@ -36,10 +36,10 @@ namespace TutoringGame
        // Default Boss (No-arg) Constructor
         public Boss()
         {
-            Health = 100;
-            Attack = 12;
-            Defense = 18;
-            Speed = 84;
+            Health = 300;
+            Attack = 50;
+            Defense = 50;
+            Speed = 100;
             Name = "Sagridell";
             EnemyDescription = "The king is always being challenged for his position.";
 
@@ -70,6 +70,49 @@ namespace TutoringGame
         {
             Name = n;
             EnemyDescription = ed;
+        }
+
+        // Boss Constructor for (Story-Defined) Constructor
+        public Boss(String mob) : base()
+        {
+            switch (mob)
+            {
+                case "1":
+                    Health = 25;
+                    Attack = 4;
+                    Defense = 1;
+                    Speed = 8;
+                    Name = "Galylum";
+                    EnemyDescription = "Sagridell took this child away from his family when he was only 3 years old.\nAll he knows is what Sagridell has told.";
+                    break;
+                case "2":
+                    Health = 34;
+                    Attack = 14;
+                    Defense = 2;
+                    Speed = 8;
+                    Name = "Zibrick";
+                    EnemyDescription = "24 hours a day Zibrick can be found wrestling Sagres, for fun.";
+                    break;
+                case "3":
+                    Health = 45;
+                    Attack = 24;
+                    Defense = 3;
+                    Speed = 1;
+                    Name = "Onsom";
+                    EnemyDescription = "The quiet before the storm, is a phrase that explains Onsom.";
+                    break;
+                case "4":
+                    Health = 100;
+                    Attack = 44;
+                    Defense = 22;
+                    Speed = 33;
+                    Name = "Drickiya";
+                    EnemyDescription = "Somebody has to stop you.  I guess it will be me.";
+                    break;
+                default:
+                    break;
+                
+            }
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿// (Enemy) Monster Class
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace TutoringGame
 {
+    // Enemy Class
     public class Enemy
     {
-        /** Identify the Variables */
+        // Variables to represent Enemy Stats
         private int health;
         private int attack;
         private int defense;
@@ -16,7 +19,7 @@ namespace TutoringGame
         private String name;
         private String enemyDescription;
 
-        /** Properties for the Variables */
+        // Properties to access Enemy Variables
         public int Health { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
@@ -24,8 +27,8 @@ namespace TutoringGame
         public String Name { get; set; }
         public String EnemyDescription { get; set; }
 
-        /** No-Arg Constructor */
-       public Enemy()
+        // Default Enemy (No-arg) Constructor
+        public Enemy()
         {
             Health = 4;
             Attack = 4;
@@ -33,10 +36,9 @@ namespace TutoringGame
             Speed = 4;
             Name = "Mobman";
             EnemyDescription = "Good luck.  This little fucker has high def.";
-
         }
 
-        /** Player-Defined Constructor */
+        // Player-defined Enemy (All Custom) Constructor
         public Enemy(int hp, int att, int def, int sp, String n, String ed)
         {
             Health = hp;
@@ -47,7 +49,7 @@ namespace TutoringGame
             EnemyDescription = ed;
         }
 
-        /** Story-Defined Constructor */
+        // Story-defined Enemy (mob selector) Constructor
         public Enemy(String mob)
         {
             switch (mob)
