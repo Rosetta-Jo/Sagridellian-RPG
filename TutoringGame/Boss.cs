@@ -45,7 +45,7 @@ namespace TutoringGame
 
         }
 
-        // Boss Constructor with (All Custom) Constructor
+        // Player-defined Boss (All Custom) Constructor
         public Boss(int hp, int att, int def, int sp, String n, String ed)
         {
             Health = hp;
@@ -56,7 +56,7 @@ namespace TutoringGame
             EnemyDescription = ed;
         }
 
-        // Boss Constructor with (Stats Custom) Constructor
+        // Player-defined Boss (Stats Custom) Constructor
         public Boss(int hp, int att, int def, int sp) : base()
         {
             Health = hp;
@@ -65,14 +65,14 @@ namespace TutoringGame
             Speed = sp;
         }
 
-        // Boss Constructor with (Name and Description Custom) Constructor
+        // Player-defined Boss (Name & Description Custom) Constructor
         public Boss(String n, String ed) : base()
         {
             Name = n;
             EnemyDescription = ed;
         }
 
-        // Boss Constructor for (Story-Defined) Constructor
+        // Story-defined Boss (mob selector) Constructor
         public Boss(String mob) : base()
         {
             switch (mob)

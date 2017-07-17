@@ -1,4 +1,6 @@
-﻿using System;
+﻿// (Tile) Design Class
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,23 +8,24 @@ using System.Threading.Tasks;
 
 namespace TutoringGame
 {
+    // Tile Class
     public class Tile
     {
-        /** Identify the Variables */
+        // Variables
         private String terrain;
         private String type;
         private String description;
         private int xcoordinate;
         private int ycoordinate;
 
-        /** Properties for the Variables */
+        // Properties
         public String Terrain { get; set; }
         public String Type { get; set; }
         public String Description { get; set; }
         public int Xcoordinate { get; set; }
         public int Ycoordinate { get; set; }
 
-        /** No-Arg Constructor */
+        // Default Tile (No-arg) Constructor
         public Tile()
         {
             Terrain = "NORMAL";
@@ -30,7 +33,7 @@ namespace TutoringGame
             Description = "This is the tile that shouldn't have made it in the game.";
         }
 
-        /** Player-Defined Constructor */
+        // Player-defined Tile (All Custom) Constructor
         public Tile(String terrain, String type, int x, int y)
         {
             Terrain = terrain;
@@ -57,7 +60,7 @@ namespace TutoringGame
             }
         }
 
-        /** Story-Defined Constructor */
+        // Story-defined Tile (type selector) Constructor
         public Tile(String terrain, String type)
         {
             Terrain = terrain;

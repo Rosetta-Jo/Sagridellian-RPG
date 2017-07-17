@@ -1,4 +1,6 @@
-﻿using System;
+﻿// (Item) Usable Class
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,21 +8,22 @@ using System.Threading.Tasks;
 
 namespace TutoringGame
 {
+    // Item Class
     public class Item
     {
-        /** Identify the Variables */
+        // Variables to represent Item Stats
         private String name;
         private String stat;
         private int value;
         private String itemdescription;
 
-        /** Properties for the Variables */
+        // Properties to access Item Variables
         public String Name { get; set; }
         public String Stat { get; set; }
         public int Value { get; set; }
         public String Itemdescription;
-        
-        /** No-Arg Constructor */
+
+        // Default Item (No-arg) Constructor
         public Item()
         {
             Name = "Health Pot";
@@ -28,8 +31,8 @@ namespace TutoringGame
             Value = 3;
             Itemdescription = "A simple potion to recover some lifepoints (3).";
         }
-        
-        /** Player-Defined Constructor */
+
+        // Player-defined Item (All Custom) Constructor
         public Item(String name, String stat, int value, String itemdescription)
         {
             Name = name;
@@ -38,7 +41,7 @@ namespace TutoringGame
             Itemdescription = itemdescription;
         }
 
-        /** Story-Defined Constructor */
+        // Story-defined Item (mob selector) Constructor
         public Item(String name)
         {
             switch (name)

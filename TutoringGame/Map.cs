@@ -1,4 +1,6 @@
-﻿using System;
+﻿// (Map) Class
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,21 +8,22 @@ using System.Threading.Tasks;
 
 namespace TutoringGame
 {
+    // Map Class
     public class Map
     {
-        /** Identify the Variables */
+        // Variables
         private int nRows;
         private int nColumns;
         private Tile[,] worldMap;
         private String title;
 
-        /** Properties for the Variables */
+        // Properties
         public int NRows { get; set; }
         public int NColumns { get; set; }
         public Tile[,] WorldMap { get; set; }
         public String Title { get; set; }
 
-        /** No-Arg Constructor */
+        // Default Map (No-arg) Constructor
         public Map()
         {
             NRows = 10;
@@ -39,7 +42,7 @@ namespace TutoringGame
             }
         }
 
-        /** Player-Defined Constructor */
+        // Player-defined Map (All Custom) Constructor
         public Map(int rows, int columns, String mapTitle)
         {
             NRows = rows;
@@ -59,7 +62,7 @@ namespace TutoringGame
             }
         }
 
-        /** Story-Defined Constructor */
+        // Story-defined Map (mob selector) Constructor
         public Map(int rows, int columns)
         {
             NRows = rows;
@@ -79,7 +82,7 @@ namespace TutoringGame
             }
         }
 
-        /** Method to catch the specific tile, TileAt(x, y)... */
+        // Tile Catching Method
         public Tile TileAt(int x, int y)
         {
             Tile ourTile;
@@ -87,7 +90,7 @@ namespace TutoringGame
             return ourTile;
         }
 
-        /** Method to display the map... */
+        // Display Map Method
         public void displayMap(Player p1, Map wm1)
         {
             Console.WriteLine("{0}", Title);
@@ -131,7 +134,7 @@ namespace TutoringGame
             }
         }
 
-        /** Method to print off Monster Tiles Cheat Code... */
+        // Find Monster Tile Method
         public Boolean MonsterGPS(Tile t)
         {
             if (t.Type == "MONSTER")
@@ -143,7 +146,8 @@ namespace TutoringGame
                 return false;
             }
         }
-        /** Method to print off Monster Tiles Cheat Code... */
+
+        // Find Boss Tile Method
         public Boolean BossGPS(Tile t)
         {
             if (t.Type == "BOSS")
@@ -155,7 +159,8 @@ namespace TutoringGame
                 return false;
             }
         }
-        /** method to print off Item Tiles Cheat Code... */
+        
+        // Find Item Tile Method
         public Boolean ItemGPS(Tile t)
         {
             if (t.Type == "ITEM")
@@ -167,7 +172,8 @@ namespace TutoringGame
                 return false;
             }
         }
-        /** Method to check if character is on square... */
+        
+        // Find Character Tile Method
         public Boolean occupied(Player p1, int x, int y)
         {
             if (p1.X == x && p1.Y == y)

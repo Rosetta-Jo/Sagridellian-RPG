@@ -1,4 +1,6 @@
-﻿using System;
+﻿// (Player) playable Class
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace TutoringGame
 {
+    // Player Class
     public class Player
     {
-        /** Identify the Variables */
+        //Variables
         private int health;
         private int attack;
         private int defense;
@@ -20,10 +23,10 @@ namespace TutoringGame
         private int level;
         private int killcount;
 
+        // Random Number Generator
         Random rand = new Random();
 
-
-        /** Properties for the Variables */
+        // Properties
         public int Health { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
@@ -35,7 +38,7 @@ namespace TutoringGame
         public int Level { get; set; }
         public int Killcount { get; set; }
 
-        /** No-Arg Constructor */
+        // Default Player (No-arg) Constructor
         public Player()
         {
             Level = 1;
@@ -48,7 +51,7 @@ namespace TutoringGame
             ClassDescription = "A poor hobo that was left with nothing.";
         }
 
-        /** Player-Defined Constructor */
+        // Player-defined Player (All Custom) Constructor
         public Player(int hp, int att, int def, int sp, String pt, String cd)
         {
             Level = 1;
@@ -61,7 +64,7 @@ namespace TutoringGame
             ClassDescription = cd;
         }
 
-        /** Story-Defined Constructor */
+        // Story-defined Player (player selector) Constructor
         public Player(String playertype)
         {
             Level = 1;
@@ -120,7 +123,7 @@ namespace TutoringGame
             }
         }
 
-        /** The Stats page for the Player... */
+        // Statistics UI Method
         public void printStats()
         {
             Console.WriteLine("uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
@@ -137,6 +140,7 @@ namespace TutoringGame
             Console.WriteLine("uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
         }
 
+        // Level Up Method
         public void levelUp()
         {
             Console.WriteLine("Your increasing killcount has leveled you up.");
