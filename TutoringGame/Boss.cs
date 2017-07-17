@@ -1,4 +1,6 @@
-﻿using System;
+﻿// (Boss) Monster Class
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace TutoringGame
 {
+    // Boss Class
     public class Boss
     {
-        /** Identify the Variables */
+        // Variables to represent Boss Stats
         private int health;
         private int attack;
         private int defense;
@@ -19,7 +22,7 @@ namespace TutoringGame
         private int ylocation;
         private Boolean isalive = true;
 
-        /** Properties for the Variables */
+        // Properties to access Boss Variables
         public int Health { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
@@ -30,7 +33,7 @@ namespace TutoringGame
         public int Ylocation { get; set; }
         public Boolean Isalive { get; set; }
 
-        /** No-Arg Constructor */
+       // Default Boss (No-arg) Constructor
         public Boss()
         {
             Health = 100;
@@ -42,7 +45,7 @@ namespace TutoringGame
 
         }
 
-        /** Player-Defined Constructor */
+        // Boss Constructor with (All Custom) Constructor
         public Boss(int hp, int att, int def, int sp, String n, String ed)
         {
             Health = hp;
@@ -53,10 +56,20 @@ namespace TutoringGame
             EnemyDescription = ed;
         }
 
-        /** Story-Defined Constructor */
-        public Boss(String mob)
+        // Boss Constructor with (Stats Custom) Constructor
+        public Boss(int hp, int att, int def, int sp) : base()
         {
+            Health = hp;
+            Attack = att;
+            Defense = def;
+            Speed = sp;
+        }
 
+        // Boss Constructor with (Name and Description Custom) Constructor
+        public Boss(String n, String ed) : base()
+        {
+            Name = n;
+            EnemyDescription = ed;
         }
     }
 }
