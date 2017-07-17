@@ -9,6 +9,7 @@
  * 
  */
 
+ // (Program) main game Class
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,20 +18,13 @@ using System.Threading.Tasks;
 
 namespace TutoringGame
 {
-    /// 
-    /// This is the class that holds the Main and where all the game actions happen.
-    /// 
+    // Program Class 
     public class Program
     {
-        /// 
-        /// The Main Method
-        /// 
+        // Main Method
         public static void Main(string[] args)
         {
-            /** Random Number Generator */
-            Random rand = new Random();
-
-            /** Variables for... (map, player stats, ...) */
+            // Variables
             int rows;
             int columns;
             int player1Attack;
@@ -42,16 +36,19 @@ namespace TutoringGame
             String player1Class;
             String title;
 
-            /** Instance of Player */
+            // Random Number Generator
+            Random rand = new Random();
+
+            // Player Instance
             Player player1 = new Player();
 
-            /** Instance of Map */
+            // Map Instance
             Map worldmap = new Map();
 
-            /** Flag for game victory */
+            // Flag for game ending
             Boolean wonGame = false;
 
-            /** Instances of each player-class */
+           // Each Player Class Instance
             Player xswordsman = new Player("Swordsman");
             Player xberserker = new Player("Berserker");
             Player xarcher = new Player("Archer");
@@ -59,12 +56,12 @@ namespace TutoringGame
             Player xmage = new Player("Mage");
             Enemy xenemey = new Enemy();
 
-            /** Introduction to the game. */
+            // Game Introduction
             Console.Clear();
             //Console.WriteLine("Welcome to The Tutoring RPG...");
             Console.WriteLine("----- Old - Timey Text RPG -----");
 
-            /** Creation of the map for game. */
+            // Map Creation
             Console.WriteLine("What game-map would you like to play on?");
             Console.WriteLine("\n1. Sagridell 9th Flank\n2. Sagridell Inner Flank\n3. Sagridell King's Chamber\n4. Custom-made");
             // Switch statement to decide the type of map
@@ -186,12 +183,13 @@ namespace TutoringGame
                     break;
             }
 
+            // Check to make sure there is a map
             if (worldmap == null)
             {
                 worldmap = new Map();
             }
 
-            /** Build the Character. */
+            // Character Building
             Console.Clear();
             Console.WriteLine("Build your character from...");
             Console.WriteLine("\nCUSTOM-----------PRESET");
@@ -257,15 +255,16 @@ namespace TutoringGame
                 player1 = new Player();
             }
 
-            /** State the Objective of Game. */
+            // Game Objective
             Console.WriteLine("The Objective of the game is to either beat the boss or beat 999 enemies rendering the king without guard");
             Console.WriteLine("Just fight enemies on M squares, and Boss is on the B square.  Items on the I squares.");
             Console.ReadLine();
             
-            /** Commence with Playing. */
+            // Place the Player
             player1.X = 0;
             player1.Y = 0;
 
+            // The Game Loop
             while (player1.Health > 0 && worldmap != null)
             {
                 Console.Clear();
@@ -287,7 +286,7 @@ namespace TutoringGame
             }
         }
 
-        /** To take a turn, call this method */
+        // Turn - Taking Method
         public static void takeTurn(Player p1, Map wm1)
         {
             Boolean madeMove = false;
@@ -386,7 +385,7 @@ namespace TutoringGame
             }
         }
 
-        /** To activate the square, call this method */
+        // Square - Activation Method
         public static void activateSquare(Tile square, Player p1)
         {
             switch (square.Type.ToUpper())
@@ -409,7 +408,8 @@ namespace TutoringGame
             }
             Console.ReadLine();
         }
-        /** The boss battle scene, call this method */
+        
+        // Boss - Battle - Activation Method
         public static void activateBoss(Player p1)
         {
             Boss b1 = new Boss();
@@ -472,7 +472,7 @@ namespace TutoringGame
             Console.ReadLine();
         }
 
-        /** To activate the battle scene, call this method */
+        // Normal - Battle - Activation Method
         public static void activateBattle(Player p1)
         {
             Random rand = new Random();
@@ -539,7 +539,7 @@ namespace TutoringGame
             Console.ReadLine();
         }
 
-        /** To activate the battle scene, call this method */
+        // Item - Activation Method
         public static void activateItem(Player p1)
         {
             Random rand = new Random();
@@ -584,7 +584,7 @@ namespace TutoringGame
             }
         }
 
-        /** Player Battle Move */
+        // Player - Batttle - Turn Method
         public static void playersMove(Player p1, Enemy e1)
         {
             Console.WriteLine("Your options:\n\nATTACK, FOCUS, DEFEND, HEAL, CHECKSELF, CHECKENEMY");
@@ -632,7 +632,7 @@ namespace TutoringGame
 
         }
 
-        /** Player Battle Move */
+        // Player - Battle - Boss - Turn Method
         public static void playersMove(Player p1, Boss e1)
         {
             Console.WriteLine("Your options:\n\nATTACK, FOCUS, DEFEND, HEAL, CHECKSELF, CHECKENEMY");
@@ -680,7 +680,7 @@ namespace TutoringGame
 
         }
 
-        /** Enemy Battle Move */
+        // Enemys - Battle - Turn Method
         public static void enemysMove(Player p1, Enemy e1)
         {
 
@@ -715,7 +715,7 @@ namespace TutoringGame
             }
         }
 
-        /** Enemy Battle Move */
+        // Bosses - Battle - Turn Method
         public static void enemysMove(Player p1, Boss e1)
         {
             Random rand = new Random();
