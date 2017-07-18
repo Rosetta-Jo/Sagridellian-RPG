@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace TutoringGame
 {
     // Item Class
-    public class Item
+    public class TheUsed
     {
         // Variables to represent Item Stats
         private String name;
@@ -24,7 +24,7 @@ namespace TutoringGame
         public String Itemdescription;
 
         // Default Item (No-arg) Constructor
-        public Item()
+        public TheUsed()
         {
             Name = "Health Pot";
             Stat = "HEALTH";
@@ -33,7 +33,7 @@ namespace TutoringGame
         }
 
         // Player-defined Item (All Custom) Constructor
-        public Item(String name, String stat, int value, String itemdescription)
+        public TheUsed(String name, String stat, int value, String itemdescription)
         {
             Name = name;
             Stat = stat;
@@ -42,7 +42,7 @@ namespace TutoringGame
         }
 
         // Story-defined Item (mob selector) Constructor
-        public Item(String name)
+        public TheUsed(String name)
         {
             switch (name)
             {

@@ -1,4 +1,4 @@
-﻿// (Enemy) Monster Class
+﻿// (Enemy) Class (Tier 3)
 
 using System;
 using System.Collections.Generic;
@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 namespace TutoringGame
 {
     // Enemy Class
-    public class Enemy : Character 
+    //
+    // Inherits from Character Abstract Class
+
+    public class Enemy : T2Character 
     {
-        // Variables to represent Enemy Stats
+        // Variables
         private int health;
         private int attack;
         private int defense;
@@ -19,13 +22,16 @@ namespace TutoringGame
         private String name;
         private String description;
 
-        // Properties to access Enemy Variables
+        // Every Game Object must implement (Name, Description, IsGameObject)
+        public override String Name { get; set; }
+        public override String Description { get; set; }
+        public override bool IsGameObject { get; set; }
+
+        // Every Character must implement (Health, Attack, Defense, Speed)
         public override int Health { get; set; }
         public override int Attack { get; set; }
         public override int Defense { get; set; }
         public override int Speed { get; set; }
-        public override String Name { get; set; }
-        public override String Description { get; set; }
 
         // Default Enemy (No-arg) Constructor
         public Enemy()
@@ -48,6 +54,13 @@ namespace TutoringGame
             Name = n;
             Description = ed;
         }
+
+
+
+        // THIS ALL NEEDS TO BE MOVED TO A DATABASE
+
+
+
 
         // Story-defined Enemy (mob selector) Constructor
         public Enemy(String mob)

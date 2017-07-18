@@ -1,4 +1,4 @@
-﻿// (Boss) Monster Class
+﻿// (Boss) Class (Tier 3)
 
 using System;
 using System.Collections.Generic;
@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 namespace TutoringGame
 {
     // Boss Class
-    public class Boss : Character
+    //
+    // Inherits from Character Abstract Class
+
+    public class Boss : T2Character
     {
-        // Variables to represent Boss Stats
+        // Variables
         private int health;
         private int attack;
         private int defense;
@@ -22,19 +25,23 @@ namespace TutoringGame
         private int ylocation;
         private Boolean isalive = true;
 
-        // Properties to access Boss Variables
+        // Every Game Object must implement (Name, Description, IsGameObject)
+        public override String Name { get; set; }
+        public override String Description { get; set; }
+        public override bool IsGameObject { get; set; }
+
+        // Every Character must implement (Health, Attack, Defense, Speed)
         public override int Health { get; set; }
         public override int Attack { get; set; }
         public override int Defense { get; set; }
         public override int Speed { get; set; }
-        public override String Name { get; set; }
-        public override String Description { get; set; }
-
+        
+        // Additional Properties for the Boss Class
         public int Xlocation { get; set; }
         public int Ylocation { get; set; }
         public Boolean Isalive { get; set; }
 
-       // Default Boss (No-arg) Constructor
+        // Default Boss (No-arg) Constructor
         public Boss()
         {
             Health = 300;

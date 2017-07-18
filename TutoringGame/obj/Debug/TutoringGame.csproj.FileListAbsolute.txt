@@ -29,3 +29,5 @@ C:\Users\Geo_t\Desktop\CS Stuff\TutoringGame\TutoringGame\bin\Debug\TutoringGame
 C:\Users\Geo_t\Desktop\CS Stuff\TutoringGame\TutoringGame\obj\Debug\TutoringGame.csprojResolveAssemblyReference.cache
 C:\Users\Geo_t\Desktop\CS Stuff\TutoringGame\TutoringGame\obj\Debug\TutoringGame.exe
 C:\Users\Geo_t\Desktop\CS Stuff\TutoringGame\TutoringGame\obj\Debug\TutoringGame.pdb
+C:\Users\Geo_t\Desktop\CS Stuff\TutoringGame\TutoringGame\obj\Debug\TutoringGame.JokeStep2.resources
+C:\Users\Geo_t\Desktop\CS Stuff\TutoringGame\TutoringGame\obj\Debug\TutoringGame.csproj.GenerateResource.Cache

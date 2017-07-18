@@ -546,7 +546,7 @@ namespace TutoringGame
             int item = rand.Next(1, 13);
 
             Console.WriteLine("There is an item laying here.");
-            Item i1 = new Item(item.ToString());
+            TheUsed i1 = new TheUsed(item.ToString());
 
             Console.WriteLine("The Item is a {0}.", i1.Name);
             Console.WriteLine("Description: {0}", i1.Itemdescription);
@@ -765,7 +765,7 @@ namespace TutoringGame
         public static void itemInterface()
         {
             Console.WriteLine("Item has been spotted.");
-            Item soju = new Item();
+            TheUsed soju = new TheUsed();
 
             // Code to handle the Item Interface Event
 

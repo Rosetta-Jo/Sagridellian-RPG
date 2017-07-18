@@ -1,4 +1,4 @@
-﻿// (Player) playable Class
+﻿// (Player) Class (Tier 3)
 
 using System;
 using System.Collections.Generic;
@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 namespace TutoringGame
 {
     // Player Class
-    public class Player : Character
+    //
+    // Inherits from Character Class
+
+    public class Player : T2Character
     {
-        //Variables
+        // Variables
         private int health;
         private int attack;
         private int defense;
@@ -26,18 +29,23 @@ namespace TutoringGame
         // Random Number Generator
         Random rand = new Random();
 
-        // Properties
+        // Every Game Object must implement (Name, Description, IsGameObject)
+        public override String Name { get; set; }
+        public override String Description { get; set; }
+        public override bool IsGameObject { get; set; }
+
+        // Every Character must implement (Health, Attack, Defense, Speed)
         public override int Health { get; set; }
         public override int Attack { get; set; }
         public override int Defense { get; set; }
         public override int Speed { get; set; }
-        public override String Name { get; set; }
-        public override String Description { get; set; }
+
+        // Additional Properties for the Player Class
         public int X { get; set; }
         public int Y { get; set; }
         public int Level { get; set; }
         public int Killcount { get; set; }
-
+        
         // Default Player (No-arg) Constructor
         public Player()
         {
