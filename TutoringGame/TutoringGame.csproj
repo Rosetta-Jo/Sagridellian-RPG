@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="T4-Prayer.cs" />
+    <Compile Include="T4-Spell.cs" />
     <Compile Include="T4-Armor.cs" />
     <Compile Include="T4-Artifact.cs" />
     <Compile Include="T3-Boss.cs" />
