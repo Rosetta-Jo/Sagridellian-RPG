@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +47,12 @@
     <Compile Include="Boss.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="JokeStep2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JokeStep2.Designer.cs">
+      <DependentUpon>JokeStep2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Item.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Player.cs" />
@@ -54,6 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="JokeStep2.resx">
+      <DependentUpon>JokeStep2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
