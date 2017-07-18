@@ -55,12 +55,6 @@
     <Compile Include="T3-Enemy.cs" />
     <Compile Include="T1-GameObject.cs" />
     <Compile Include="T2-Item.cs" />
-    <Compile Include="JokeStep2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JokeStep2.Designer.cs">
-      <DependentUpon>JokeStep2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Old-Items-Class.cs" />
     <Compile Include="Mapping-Map.cs" />
     <Compile Include="T3-Player.cs" />
@@ -71,11 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="JokeStep2.resx">
-      <DependentUpon>JokeStep2.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

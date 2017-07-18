@@ -1,3 +1,6 @@
 C:\Users\Geo_t\Desktop\CS Stuff\TutoringGame\TutoringGame\obj\Debug\Sagridellian Revolution.csprojResolveAssemblyReference.cache
 C:\Users\Geo_t\Desktop\CS Stuff\TutoringGame\TutoringGame\obj\Debug\TutoringGame.exe
 C:\Users\Geo_t\Desktop\CS Stuff\TutoringGame\TutoringGame\obj\Debug\TutoringGame.pdb
+C:\Users\Geo_t\Desktop\CS Stuff\TutoringGame\TutoringGame\bin\Debug\TutoringGame.exe.config
+C:\Users\Geo_t\Desktop\CS Stuff\TutoringGame\TutoringGame\bin\Debug\TutoringGame.exe
+C:\Users\Geo_t\Desktop\CS Stuff\TutoringGame\TutoringGame\bin\Debug\TutoringGame.pdb
