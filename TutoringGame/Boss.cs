@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace TutoringGame
 {
     // Boss Class
-    public class Boss
+    public class Boss : Character
     {
         // Variables to represent Boss Stats
         private int health;
@@ -17,18 +17,19 @@ namespace TutoringGame
         private int defense;
         private int speed;
         private String name;
-        private String enemyDescription;
+        private String description;
         private int xlocation;
         private int ylocation;
         private Boolean isalive = true;
 
         // Properties to access Boss Variables
-        public int Health { get; set; }
-        public int Attack { get; set; }
-        public int Defense { get; set; }
-        public int Speed { get; set; }
-        public String Name { get; set; }
-        public String EnemyDescription { get; set; }
+        public override int Health { get; set; }
+        public override int Attack { get; set; }
+        public override int Defense { get; set; }
+        public override int Speed { get; set; }
+        public override String Name { get; set; }
+        public override String Description { get; set; }
+
         public int Xlocation { get; set; }
         public int Ylocation { get; set; }
         public Boolean Isalive { get; set; }
@@ -41,7 +42,7 @@ namespace TutoringGame
             Defense = 50;
             Speed = 100;
             Name = "Sagridell";
-            EnemyDescription = "The king is always being challenged for his position.";
+            Description = "The king is always being challenged for his position.";
 
         }
 
@@ -53,7 +54,7 @@ namespace TutoringGame
             Defense = def;
             Speed = sp;
             Name = n;
-            EnemyDescription = ed;
+            Description = ed;
         }
 
         // Player-defined Boss (Stats Custom) Constructor
@@ -69,7 +70,7 @@ namespace TutoringGame
         public Boss(String n, String ed) : base()
         {
             Name = n;
-            EnemyDescription = ed;
+            Description = ed;
         }
 
         // Story-defined Boss (mob selector) Constructor
@@ -83,7 +84,7 @@ namespace TutoringGame
                     Defense = 1;
                     Speed = 8;
                     Name = "Galylum";
-                    EnemyDescription = "Sagridell took this child away from his family when he was only 3 years old.\nAll he knows is what Sagridell has told.";
+                    Description = "Sagridell took this child away from his family when he was only 3 years old.\nAll he knows is what Sagridell has told.";
                     break;
                 case "2":
                     Health = 34;
@@ -91,7 +92,7 @@ namespace TutoringGame
                     Defense = 2;
                     Speed = 8;
                     Name = "Zibrick";
-                    EnemyDescription = "24 hours a day Zibrick can be found wrestling Sagres, for fun.";
+                    Description = "24 hours a day Zibrick can be found wrestling Sagres, for fun.";
                     break;
                 case "3":
                     Health = 45;
@@ -99,7 +100,7 @@ namespace TutoringGame
                     Defense = 3;
                     Speed = 1;
                     Name = "Onsom";
-                    EnemyDescription = "The quiet before the storm, is a phrase that explains Onsom.";
+                    Description = "The quiet before the storm, is a phrase that explains Onsom.";
                     break;
                 case "4":
                     Health = 100;
@@ -107,12 +108,18 @@ namespace TutoringGame
                     Defense = 22;
                     Speed = 33;
                     Name = "Drickiya";
-                    EnemyDescription = "Somebody has to stop you.  I guess it will be me.";
+                    Description = "Somebody has to stop you.  I guess it will be me.";
                     break;
                 default:
                     break;
                 
             }
+        }
+
+        // Just a placeholder for now, for any abstract methods we may want implemented.
+        public override void Reset()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -219,9 +219,9 @@ namespace TutoringGame
 
                     // Prompt the user to enter their desired class...
                     Console.WriteLine("What type of character are you?");// (SWORDSMAN, BERSERKER, ARCHER, HALBERDIER, MAGE)");
-                    Console.WriteLine("{0}\t{1}\n\n{2}\t{3}\n\n{4}\t\t{5}\n\n{6}\t{7}\n\n{8}\t\t{9}", "SWORDSMAN", xswordsman.ClassDescription, 
-                        "BERSERKER", xberserker.ClassDescription, "ARCHER", xarcher.ClassDescription, "HALBERDIER", xhalberdier.ClassDescription
-                        , "MAGE", xmage.ClassDescription);
+                    Console.WriteLine("{0}\t{1}\n\n{2}\t{3}\n\n{4}\t\t{5}\n\n{6}\t{7}\n\n{8}\t\t{9}", "SWORDSMAN", xswordsman.Description, 
+                        "BERSERKER", xberserker.Description, "ARCHER", xarcher.Description, "HALBERDIER", xhalberdier.Description
+                        , "MAGE", xmage.Description);
 
                     player1TypeChoice = Console.ReadLine().ToUpper();
 
@@ -482,7 +482,7 @@ namespace TutoringGame
             Enemy e1 = new Enemy(enemy.ToString());
 
             Console.WriteLine("{0} has appeared.", e1.Name);
-            Console.WriteLine("{0}", e1.EnemyDescription);
+            Console.WriteLine("{0}", e1.Description);
 
             int temp1 = p1.Health;
             int temp2 = p1.Attack;

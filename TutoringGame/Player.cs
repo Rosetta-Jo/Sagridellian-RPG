@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 namespace TutoringGame
 {
     // Player Class
-    public class Player
+    public class Player : Character
     {
         //Variables
         private int health;
         private int attack;
         private int defense;
         private int speed;
-        private String playerType;
-        private String classDescription;
+        private String name;
+        private String description;
         private int x;
         private int y;
         private int level;
@@ -27,12 +27,12 @@ namespace TutoringGame
         Random rand = new Random();
 
         // Properties
-        public int Health { get; set; }
-        public int Attack { get; set; }
-        public int Defense { get; set; }
-        public int Speed { get; set; }
-        public String PlayerType { get; set; }
-        public String ClassDescription { get; set; }
+        public override int Health { get; set; }
+        public override int Attack { get; set; }
+        public override int Defense { get; set; }
+        public override int Speed { get; set; }
+        public override String Name { get; set; }
+        public override String Description { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
         public int Level { get; set; }
@@ -47,8 +47,8 @@ namespace TutoringGame
             Attack = 4;
             Defense = 1;
             Speed = 2;
-            PlayerType = "Vagrant";
-            ClassDescription = "A poor hobo that was left with nothing.";
+            Name = "Vagrant";
+            Description = "A poor hobo that was left with nothing.";
         }
 
         // Player-defined Player (All Custom) Constructor
@@ -60,8 +60,8 @@ namespace TutoringGame
             Attack = att;
             Defense = def;
             Speed = sp;
-            PlayerType = pt;
-            ClassDescription = cd;
+            Name = pt;
+            Description = cd;
         }
 
         // Story-defined Player (player selector) Constructor
@@ -77,40 +77,40 @@ namespace TutoringGame
                     Attack = 5;
                     Defense = 2;
                     Speed = 5;
-                    PlayerType = "Swordsman";
-                    ClassDescription = "Good with a sword, high attack, high speed, low defense.";
+                    Name = "Swordsman";
+                    Description = "Good with a sword, high attack, high speed, low defense.";
                     break;
                 case "BERSERKER":
                     Health = 6;
                     Attack = 10;
                     Defense = 5;
                     Speed = 1;
-                    PlayerType = "Berserker";
-                    ClassDescription = "CRAZYYYY STRONG!!!, but slow.";
+                    Name = "Berserker";
+                    Description = "CRAZYYYY STRONG!!!, but slow.";
                     break;
                 case "ARCHER":
                     Health = 10;
                     Attack = 3;
                     Defense = 0;
                     Speed = 5;
-                    PlayerType = "Archer";
-                    ClassDescription = "Fast with decent attack, no defense.";
+                    Name = "Archer";
+                    Description = "Fast with decent attack, no defense.";
                     break;
                 case "HALBERDIER":
                     Health = 8;
                     Attack = 2;
                     Defense = 4;
                     Speed = 4;
-                    PlayerType = "Halberdier";
-                    ClassDescription = "Carries a big long axe, decent stats all-around.";
+                    Name = "Halberdier";
+                    Description = "Carries a big long axe, decent stats all-around.";
                     break;
                 case "MAGE":
                     Health = 5;
                     Attack = 12;
                     Defense = 0;
                     Speed = 5;
-                    PlayerType = "Mage";
-                    ClassDescription = "Weak as shit.  But hits really hard.";
+                    Name = "Mage";
+                    Description = "Weak as shit.  But hits really hard.";
                     break;
                     /** Create more characters later, right here,,, as new Cases 
                     like 
@@ -127,11 +127,11 @@ namespace TutoringGame
         public void printStats()
         {
             Console.WriteLine("uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-            Console.WriteLine("                   {0}", PlayerType);
+            Console.WriteLine("                   {0}", Name);
             Console.WriteLine("uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
             Console.WriteLine("Level: {0}", Level);
             Console.WriteLine("Enemy Kill Count: {0}", Killcount);
-            Console.WriteLine("Class Description: {0}", ClassDescription);
+            Console.WriteLine("Class Description: {0}", Description);
             Console.WriteLine("uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
             Console.WriteLine("                    Health: {0}", Health);
             Console.WriteLine("                    Attack: {0}", Attack);
@@ -161,6 +161,12 @@ namespace TutoringGame
             }
             Level++;
             printStats();
+        }
+
+        // Just a placeholder for now, for any abstract methods we may want implemented.
+        public override void Reset()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace TutoringGame
 {
     // Enemy Class
-    public class Enemy
+    public class Enemy : Character 
     {
         // Variables to represent Enemy Stats
         private int health;
@@ -17,15 +17,15 @@ namespace TutoringGame
         private int defense;
         private int speed;
         private String name;
-        private String enemyDescription;
+        private String description;
 
         // Properties to access Enemy Variables
-        public int Health { get; set; }
-        public int Attack { get; set; }
-        public int Defense { get; set; }
-        public int Speed { get; set; }
-        public String Name { get; set; }
-        public String EnemyDescription { get; set; }
+        public override int Health { get; set; }
+        public override int Attack { get; set; }
+        public override int Defense { get; set; }
+        public override int Speed { get; set; }
+        public override String Name { get; set; }
+        public override String Description { get; set; }
 
         // Default Enemy (No-arg) Constructor
         public Enemy()
@@ -35,7 +35,7 @@ namespace TutoringGame
             Defense = 4;
             Speed = 4;
             Name = "Mobman";
-            EnemyDescription = "Good luck.  This little fucker has high def.";
+            Description = "Good luck.  This little fucker has high def.";
         }
 
         // Player-defined Enemy (All Custom) Constructor
@@ -46,7 +46,7 @@ namespace TutoringGame
             Defense = def;
             Speed = sp;
             Name = n;
-            EnemyDescription = ed;
+            Description = ed;
         }
 
         // Story-defined Enemy (mob selector) Constructor
@@ -60,7 +60,7 @@ namespace TutoringGame
                     Defense = 1;
                     Speed = 4;
                     Name = "Sagride";
-                    EnemyDescription = "Sagride is just a squire for one of the Sagridellian 9th Flank.";
+                    Description = "Sagride is just a squire for one of the Sagridellian 9th Flank.";
                     break;
                 case "2":
                     Health = 10;
@@ -68,7 +68,7 @@ namespace TutoringGame
                     Defense = 0;
                     Speed = 1;
                     Name = "Sagresh";
-                    EnemyDescription = "Beware Sagresh's strike.  It is that of a BERSERKA!.";
+                    Description = "Beware Sagresh's strike.  It is that of a BERSERKA!.";
                     break;
                 case "3":
                     Health = 2;
@@ -76,7 +76,7 @@ namespace TutoringGame
                     Defense = 12;
                     Speed = 2;
                     Name = "Sagul";
-                    EnemyDescription = "Sagul has a very strong armour that he nevers walks around without.";
+                    Description = "Sagul has a very strong armour that he nevers walks around without.";
                     break;
                 case "4":
                     Health = 1;
@@ -84,7 +84,7 @@ namespace TutoringGame
                     Defense = 1;
                     Speed = 1;
                     Name = "Saggas";
-                    EnemyDescription = "The guard dog has a bite from hell.";
+                    Description = "The guard dog has a bite from hell.";
                     break;
                 case "5":
                     Health = 45;
@@ -92,7 +92,7 @@ namespace TutoringGame
                     Defense = 1;
                     Speed = 5;
                     Name = "Sagiru";
-                    EnemyDescription = "The keeper of the potions, Sagiru, is in good health.";
+                    Description = "The keeper of the potions, Sagiru, is in good health.";
                     break;
                 case "6":
                     Health = 2;
@@ -100,7 +100,7 @@ namespace TutoringGame
                     Defense = 0;
                     Speed = 1;
                     Name = "Sage";
-                    EnemyDescription = "NO TIME TO LOSE, KILL HIM NOW!!!";
+                    Description = "NO TIME TO LOSE, KILL HIM NOW!!!";
                     break;
                 case "7":
                     Health = 15;
@@ -108,7 +108,7 @@ namespace TutoringGame
                     Defense = 5;
                     Speed = 0;
                     Name = "Saggitarius";
-                    EnemyDescription = "Not all knights can wear armour and hold a big axe at the same time.";
+                    Description = "Not all knights can wear armour and hold a big axe at the same time.";
                     break;
                 case "8":
                     Health = 0;
@@ -116,7 +116,7 @@ namespace TutoringGame
                     Defense = 25;
                     Speed = 0;
                     Name = "Sagonquan";
-                    EnemyDescription = "He's been dead for a while.  They just carry him around for the memory.";
+                    Description = "He's been dead for a while.  They just carry him around for the memory.";
                     break;
                 case "9":
                     Health = 12;
@@ -124,7 +124,7 @@ namespace TutoringGame
                     Defense = 6;
                     Speed = 8;
                     Name = "Sagnam";
-                    EnemyDescription = "A very skilled swordsman that has killed 200 knights for his title.";
+                    Description = "A very skilled swordsman that has killed 200 knights for his title.";
                     break;
                 case "10":
                     Health = 15;
@@ -132,7 +132,7 @@ namespace TutoringGame
                     Defense = 15;
                     Speed = 15;
                     Name = "Sagargry";
-                    EnemyDescription = "A Giant, that was knighted during the 3rd conflict.  He was the only survivor.";
+                    Description = "A Giant, that was knighted during the 3rd conflict.  He was the only survivor.";
                     break;
                 case "11":
                     Health = 5;
@@ -140,7 +140,7 @@ namespace TutoringGame
                     Defense = 0;
                     Speed = 0;
                     Name = "Sag";
-                    EnemyDescription = "Lucky thing Sag is a pacifist.  Otherwise there would be problems.";
+                    Description = "Lucky thing Sag is a pacifist.  Otherwise there would be problems.";
                     break;
                 case "12":
                     Health = 13;
@@ -148,9 +148,15 @@ namespace TutoringGame
                     Defense = 8;
                     Speed = 5;
                     Name = "Sagite";
-                    EnemyDescription = "An overall powerful knight who loves the lance.";
+                    Description = "An overall powerful knight who loves the lance.";
                     break;
             }
+        }
+
+        // Just a placeholder for now, for any abstract methods we may want implemented.
+        public override void Reset()
+        {
+            throw new NotImplementedException();
         }
     }
 }
